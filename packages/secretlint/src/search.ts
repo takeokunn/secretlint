@@ -49,6 +49,7 @@ export const searchFiles = async (patterns: string[], options: SearchFilesOption
     const searchResultItems = await globby(patterns, {
         cwd: options.cwd,
         ignore: ignoredPatterns,
+        gitignore: true,
         dot: true,
         absolute: true,
     });
